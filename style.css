@@ -56,7 +56,7 @@ html::-webkit-scrollbar-thumb:hover {
     --accent-yellow: #719fd7;
     --accent-pill: #dbeaff;
     --text-soft: #b3bdcd;
-    --shadow-soft: 0 18px 40px rgba(46, 101, 145, 0.12);
+    --shadow-soft: 0 0px 40px rgba(46, 101, 145, 0.08);
     --text-main: #222222;
     --text-sub: #2a2a2a;
     --border-soft: #e4e7ee;
@@ -85,7 +85,7 @@ body {
     /* background: linear-gradient(180deg,
             var(--bg-gradient-top) 0%,
             var(--bg-gradient-bottom) 100%); */
-    background-color: #fff;
+    background-color: #ededed;
 }
 
 /* ============ PAGE WRAPPER ============ */
@@ -200,8 +200,8 @@ body {
 .card {
     background: var(--card-bg);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    padding: 32px 40px;
+    /* box-shadow: var(--shadow-soft); */
+    padding: 50px 60px;
 }
 
 /* ============ HERO (HOME) ============ */
@@ -209,8 +209,8 @@ body {
 .section-hero .hero-card {
     background: var(--accent-pill);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
-    padding: 40px;
+    /* box-shadow: var(--shadow-soft); */
+    padding: 50px 60px;
 }
 
 .hero-sub {
@@ -301,7 +301,7 @@ body {
 .about-content {
     display: grid;
     grid-template-columns: 160px minmax(0, 1fr);
-    gap: 24px;
+    gap: 40px;
     align-items: flex-start;
 }
 
@@ -719,6 +719,10 @@ body {
     background-color: #0950d4;
 }
 
+.header {
+    display: none;
+}
+
 /* ============ RESPONSIVE ============ */
 
 /* 태블릿 */
@@ -748,6 +752,7 @@ body {
         box-shadow: var(--shadow-soft);
         padding: 20px;
         gap: 18px;
+        width: 100% !important;
 
     }
 
@@ -810,7 +815,7 @@ body {
 
     /* === 파란 카드 모양 === */
     .nav-card {
-        background: linear-gradient(180deg, #1a5aff 0%, #246bff 100%);
+        background-color: var(--primary);
         color: #ffffff;
         border-radius: 0 30px 30px 0;
         /* 시안처럼 둥근 모서리 크게 */
@@ -942,7 +947,7 @@ body {
 /* 아주 작은 모바일(옵션) */
 @media (max-width: 480px) {
     .global-nav {
-        width: 240px;
+        width: 100%;
         top: 28px;
     }
 
@@ -955,28 +960,13 @@ body {
 
     /* 파란 네비 박스 위치 – 화면에서 살짝 안쪽으로 */
     .global-nav {
-        position: fixed;
-        top: 28px;
-        left: 0px;
-        right: auto;
-        width: 180px;
-        /* 기본 폭 */
-        max-width: calc(100vw - 48px);
-        /* 화면 - 양쪽 24px 안으로 제한 */
-        z-index: 1000;
-        box-shadow: none !important;
+        display: none;
     }
 
-    .global-nav.on-right {
-        left: auto;
-        right: 24px;
-        top: 0px !important;
-
-    }
 
     /* 본문 시작 지점을 파란 박스 아래로 더 내리기 */
     .main {
-        margin-top: 260px;
+        margin-top: 160px;
         /* 기존 190px 정도였다면 이렇게 늘려줘 */
         margin-left: 0;
         padding: 0;
@@ -988,33 +978,9 @@ body {
         flex-direction: column;
     }
 
-    .global-nav.on-right .nav-link {
-        padding: 5px 10px;
-    }
-
     /* 나머지 모바일 스타일(파란 박스 모양, 섹션 배경 등)은 그대로 두면 돼 */
 }
 
-.global-nav.on-right .nav-card {
-    border-radius: 0 0 0 26px !important;
-    padding: 14px 14px 16px;
-
-}
-
-.global-nav.on-right .nav-card .sidebar-name {
-    display: none;
-}
-
-.global-nav.on-right .nav-card .sidebar-role {
-    display: none;
-}
-
-.global-nav.on-right {
-    position: fixed;
-    top: 28px;
-    left: auto;
-    right: 0px;
-}
 
 /* 모바일에서는 스크롤바 숨기기 */
 @media (max-width: 768px) {
@@ -1033,4 +999,155 @@ body {
         display: none;
         /* Chrome, Safari, Edge */
     }
+
+
+
+    /* 공통 헤더 레이아웃(필요시 수정) */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: block;
+    }
+
+    .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* ====== 모바일 헤더 기본 ====== */
+
+    .mobile-header {
+        position: relative;
+        height: 64px;
+        /* 시안 높이 느낌 */
+    }
+
+    /* 왼쪽 둥근 파란 버튼 */
+    .mobile-menu-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 64px;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+        background: var(--accent-yellow);
+        border-bottom-right-radius: 32px;
+        /* 둥글게 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 햄버거 선 3줄 */
+    .mobile-menu-btn span {
+        width: 22px;
+        height: 3px;
+        border-radius: 999px;
+        background: #ffffff;
+    }
+
+    /* 파란 네비 바 (애니메이션 버전) */
+    .mobile-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 64px;
+        background: var(--primary);
+
+        display: flex;
+        /* 항상 flex, 대신 transform으로 숨김 */
+        align-items: center;
+        /* padding: 0 16px; */
+
+        transform-origin: left center;
+        /* 왼쪽 햄버거 버튼에서 펼쳐지는 느낌 */
+        transform: scaleX(0);
+        /* 처음엔 가로 0 */
+        opacity: 0;
+        /* 투명 */
+        pointer-events: none;
+        /* 닫힌 상태에서 클릭 막기 */
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    /* 열렸을 때: 부드럽게 슥- 펼쳐짐 */
+    .mobile-header.is-open .mobile-nav {
+        transform: scaleX(1);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* 메뉴 리스트: 가운데 정렬 */
+    .mobile-nav-list {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .mobile-nav-list a {
+        font-weight: 700;
+        color: var(--accent-yellow);
+        /* 시안처럼 노란 텍스트 */
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .mobile-nav-list a:hover {
+        color: #fff;
+        font-weight: 800;
+    }
+
+    /* 오른쪽 X 버튼 */
+    .mobile-nav-close {
+        border: none;
+        background: transparent;
+        color: #ffcf4a;
+        /* font-size: 26px; */
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    /* 부드러운 스크롤 + 고정 헤더 보정(선택) */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    /* ====== 반응형: 모바일에서만 보이게 ====== */
+
+    @media (max-width: 768px) {
+        .mobile-header {
+            display: block;
+        }
+
+        /* PC용 헤더/네비가 있다면 여기서 숨기기
+         예: .pc-header, .gnb 같은 클래스 있으면 display:none; */
+        /* .pc-header { display: none; } */
+    }
+
+    @media (min-width: 769px) {
+        .mobile-header {
+            display: none;
+        }
+    }
+
+
 }
