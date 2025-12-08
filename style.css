@@ -893,7 +893,7 @@ body {
 
     /* 본문은 파란 박스 아래에서 시작 (좌우 패딩 없음, 섹션 내부에서만 패딩) */
     .main {
-        margin: 190px 0 0;
+        margin: 0px 0 0;
         padding: 0;
         gap: 24px;
     }
@@ -909,7 +909,7 @@ body {
         margin: 0;
         border-radius: 0;
         /* box-shadow: none; */
-        padding: 52px 24px 40px;
+        padding: 92px 24px 40px;
     }
 
     .card_tit.home {
@@ -972,7 +972,7 @@ body {
 
     /* 본문 시작 지점을 파란 박스 아래로 더 내리기 */
     .main {
-        margin-top: 160px;
+        margin-top: 0px;
         /* 기존 190px 정도였다면 이렇게 늘려줘 */
         margin-left: 0;
         padding: 0;
@@ -1041,7 +1041,7 @@ body {
         padding: 0;
         border: none;
         cursor: pointer;
-        background: var(--accent-yellow);
+        background: var(--accent-pill);
         border-bottom-right-radius: 32px;
         /* 둥글게 */
         display: flex;
@@ -1057,7 +1057,7 @@ body {
         width: 22px;
         height: 3px;
         border-radius: 999px;
-        background: #ffffff;
+        background: var(--accent-yellow);
     }
 
     /* 파란 네비 바 (애니메이션 버전) */
