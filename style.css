@@ -38,7 +38,7 @@ html::-webkit-scrollbar-thumb:hover {
     --bg-body: #e3f0ff;
     --bg-gradient-top: #e3f0ff;
     --bg-gradient-bottom: #f3f7ff;
-    --card-bg: #ffffff;
+    --card-bg: #f4f4f4;
     /* --primary: #275BC4;
     --primary-dark: #1554e3;
     --accent-yellow: #ffca4b;
@@ -51,15 +51,21 @@ html::-webkit-scrollbar-thumb:hover {
     --accent-pill: #d8efef;
     --text-soft: #cdb3b3;
     --shadow-soft: 0 18px 40px rgba(46, 145, 132, 0.12); */
-    --primary: #38393b;
+    /* --primary: #38393b;
     --primary-dark: #30334e;
     --accent-yellow: #719fd7;
     --accent-pill: #dbeaff;
     --text-soft: #b3bdcd;
-    --shadow-soft: 0 0px 40px rgba(46, 101, 145, 0.08);
+    --shadow-soft: 0 0px 40px rgba(46, 101, 145, 0.08); */
+    --primary: #343434;
+    --primary-dark: #232428;
+    --accent-yellow: #dc452e;
+    --accent-pill: #ffb4a7;
+    --text-soft: #c7381f;
+    --shadow-soft: 0 0px 40px rgba(145, 72, 46, 0.08);
     --text-main: #222222;
     --text-sub: #2a2a2a;
-    --border-soft: #e4e7ee;
+    --border-soft: #eee5e4;
     --radius-lg: 28px;
     --radius-md: 24px;
     --radius-pill: 999px;
@@ -85,7 +91,7 @@ body {
     /* background: linear-gradient(180deg,
             var(--bg-gradient-top) 0%,
             var(--bg-gradient-bottom) 100%); */
-    background-color: #ededed;
+    background-color: #ffffff;
 }
 
 /* ============ PAGE WRAPPER ============ */
@@ -339,7 +345,7 @@ body {
 .about-name {
     font-weight: 600;
     margin-bottom: 4px;
-    border-top: 1px solid var(--text-sub);
+    border-top: 1px solid var(--border-soft);
     padding-top: 20px;
     font-size: 20px !important;
 }
