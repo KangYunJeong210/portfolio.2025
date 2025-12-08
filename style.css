@@ -59,9 +59,9 @@ html::-webkit-scrollbar-thumb:hover {
     --shadow-soft: 0 0px 40px rgba(46, 101, 145, 0.08); */
     --primary: #212121;
     --primary-dark: #232428;
-    --accent-yellow: #eb5038;
-    --accent-pill: #ffbaae;
-    --text-soft: #db8072;
+    --accent-yellow: #f35948;
+    --accent-pill: #ffe9e5;
+    --text-soft: #e19589;
     --shadow-soft: 0 0px 40px rgba(145, 72, 46, 0.08);
     --text-main: #222222;
     --text-sub: #2a2a2a;
