@@ -8,7 +8,7 @@ body {
 html {
     scrollbar-width: thin;
     /* 파이어폭스 */
-    scrollbar-color: #b0c4ff #e3f0ff;
+    scrollbar-color: var(--accent-pill);
     /* thumb, track 색 */
 }
 
@@ -24,13 +24,13 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #b0c4ff;
+    background: var(--accent-pill);
     /* 스크롤바 색 */
     border-radius: 999px;
 }
 
 html::-webkit-scrollbar-thumb:hover {
-    background: #8fa7ff;
+    background: var(--accent-yellow);
 }
 
 
@@ -53,15 +53,15 @@ html::-webkit-scrollbar-thumb:hover {
     --shadow-soft: 0 18px 40px rgba(46, 145, 132, 0.12); */
     /* --primary: #38393b;
     --primary-dark: #30334e;
-    --accent-yellow: #719fd7;
+    --accent-yellow: #2174f0;
     --accent-pill: #dbeaff;
     --text-soft: #b3bdcd;
     --shadow-soft: 0 0px 40px rgba(46, 101, 145, 0.08); */
-    --primary: #343434;
+    --primary: #212121;
     --primary-dark: #232428;
-    --accent-yellow: #dc452e;
-    --accent-pill: #ffb4a7;
-    --text-soft: #c7381f;
+    --accent-yellow: #eb5038;
+    --accent-pill: #ffbaae;
+    --text-soft: #db8072;
     --shadow-soft: 0 0px 40px rgba(145, 72, 46, 0.08);
     --text-main: #222222;
     --text-sub: #2a2a2a;
@@ -213,7 +213,7 @@ body {
 /* ============ HERO (HOME) ============ */
 
 .section-hero .hero-card {
-    background: var(--accent-pill);
+    background: var(--accent-yellow);
     border-radius: var(--radius-lg);
     /* box-shadow: var(--shadow-soft); */
     padding: 50px 60px;
@@ -233,7 +233,7 @@ body {
 .hero-title {
     font-size: 46px;
     line-height: 1.5;
-    margin: 0 0 126px;
+    margin: 0 0 60px;
     color: var(--primary);
     font-weight: 900;
     text-align: right;
@@ -242,7 +242,7 @@ body {
 .hero-text {
     font-size: 18px;
     line-height: 1.7;
-    color: var(--primary);
+    color: var(--border-soft);
     margin: 0;
     font-weight: 400;
 }
