@@ -240,6 +240,7 @@ body {
     border-radius: var(--radius-lg);
     /* box-shadow: var(--shadow-soft); */
     padding: 50px 60px;
+    box-shadow: var(--box-shadow);
 }
 
 .hero-sub {
