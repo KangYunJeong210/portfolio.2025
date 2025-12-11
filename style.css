@@ -244,7 +244,7 @@ body {
 .hero-sub {
     font-size: 16px;
     font-weight: 200;
-    margin: 0 0 50px;
+    margin: 0 0 26px;
     color: var(--text-sub);
 }
 
@@ -289,7 +289,7 @@ body {
     margin: 10px 0 10px;
     color: var(--text-sub);
     font-weight: 800;
-    text-align: left
+    text-align: left;
 }
 
 .hero-text {
@@ -836,7 +836,7 @@ body {
 
     .hero-title {
         font-size: 24px;
-        text-align: right;
+        text-align: left;
         word-break: keep-all;
         font-size: 36px;
     }
