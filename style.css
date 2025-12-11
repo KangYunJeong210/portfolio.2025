@@ -1002,7 +1002,7 @@ body {
         margin: 0;
         border-radius: 0;
         /* box-shadow: none; */
-        padding: 192px 24px 40px;
+        padding: 152px 24px 40px;
     }
 
     .card_tit.home {
@@ -1016,6 +1016,10 @@ body {
 
     .section-hero .hero-card {
         box-shadow: none;
+    }
+
+    .hero-meta-line img {
+        width: 98%;
     }
 
     /* 나머지 카드 섹션들은 흰색 배경으로 꽉 차게 */
@@ -1138,7 +1142,7 @@ body {
         padding: 0;
         border: none;
         cursor: pointer;
-        background: var(--accent-pill);
+        background: var(--border-soft);
         border-bottom-right-radius: 32px;
         /* 둥글게 */
         display: flex;
@@ -1250,7 +1254,13 @@ body {
         .mobile-header {
             display: none;
         }
+
+        .section-hero .hero-card {
+            border-radius: 0;
+        }
     }
+
+
 
 
 }
@@ -1351,6 +1361,10 @@ body {
 @media (max-width: 768px) {
     .section-hero {
         min-height: 80vh;
+    }
+
+    .section-hero .hero-card {
+        border-radius: 0;
     }
 }
 
