@@ -4,6 +4,10 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* 데스크톱 기본 스크롤 스타일 */
 html {
     scrollbar-width: thin;
@@ -38,7 +42,7 @@ html::-webkit-scrollbar-thumb:hover {
     --bg-body: #e3f0ff;
     --bg-gradient-top: #e3f0ff;
     --bg-gradient-bottom: #f3f7ff;
-    --card-bg: #242323;
+    --card-bg: #171717;
     /* --primary: #275BC4;
     --primary-dark: #1554e3;
     --accent-yellow: #ffca4b;
@@ -72,7 +76,7 @@ html::-webkit-scrollbar-thumb:hover {
     --box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.09),
         inset 0 0 0 1px rgba(255, 255, 255, 0.03),
-        inset 0 -3px 5px rgba(27, 27, 27, 0.85);
+        inset 0 -2px 1px rgba(27, 27, 27, 0.85);
 }
 
 *,
@@ -95,7 +99,7 @@ body {
     /* background: linear-gradient(180deg,
             var(--bg-gradient-top) 0%,
             var(--bg-gradient-bottom) 100%); */
-    background-color: #1B1B1B;
+    background-color: #0e0e0e;
 }
 
 /* ============ PAGE WRAPPER ============ */
@@ -125,17 +129,9 @@ body {
     border-radius: var(--radius-lg);
     padding: 28px 24px 24px;
     box-shadow:
-        /* 1. 전체 박스 뒤로 떨어지는 부드러운 그림자 (아우터) */
-
-        /* 2. 살짝 밝은 안쪽 테두리 – 위·왼쪽이 은은하게 반사된 느낌 */
         inset 0 1px 0 rgba(255, 255, 255, 0.09),
-
-        /* 3. 아주 얇은 안쪽 라인 – 카드 가장자리 선 느낌 */
         inset 0 0 0 1px rgba(255, 255, 255, 0.03),
-
-        /* 4. 아래쪽으로 눌린 느낌을 주는 이너 그림자 (하단 그라데이션) */
-        inset 0 -3px 5px rgba(27, 27, 27, 0.85);
-
+        inset 0 -2px 1px rgba(27, 27, 27, 0.85);
     /* 테두리 존재감 살짝 더 주고 싶으면 */
     border: 1px solid rgba(255, 255, 255, 0.03);
 }
@@ -226,10 +222,11 @@ body {
     border-radius: var(--radius-lg);
     /* box-shadow: var(--shadow-soft); */
     padding: 50px 60px;
+    background: rgba(15, 15, 15, 0.8);
 }
 
 .card.portfolio-card {
-    background-color: #313131 !important;
+    background-color: #313131 !important 90%;
     box-shadow: var(--box-shadow);
 }
 
@@ -240,27 +237,59 @@ body {
     border-radius: var(--radius-lg);
     /* box-shadow: var(--shadow-soft); */
     padding: 50px 60px;
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
+    border: var(--radius-lg);
 }
 
 .hero-sub {
     font-size: 16px;
-    font-weight: 600;
-    margin: 0 0 12px;
-    color: #333;
+    font-weight: 200;
+    margin: 0 0 50px;
+    color: var(--text-sub);
 }
 
 .hero-sub:nth-child(1) {
     display: none;
 }
 
+.btn-solid {
+    border-radius: 999px;
+    padding: 11px 22px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    /* border: 1px solid rgba(255, 225, 180, 0.9); */
+    background: var(--accent-yellow);
+    color: var(--text-sub);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 20px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.75);
+}
+
+.hero-cta-row {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(247, 213, 213, 0.78);
+}
+
 .hero-title {
     font-size: 46px;
-    line-height: 1.5;
-    margin: 0 0 60px;
+    line-height: 1.4;
+    margin: 10px 0 10px;
     color: var(--text-sub);
-    font-weight: 900;
-    text-align: right;
+    font-weight: 800;
+    text-align: left
 }
 
 .hero-text {
@@ -329,6 +358,7 @@ body {
     z-index: 100;
     /* box-shadow: 0 24px 40px rgba(0, 40, 120, 0.35) !important; */
     box-shadow: var(--box-shadow);
+
 }
 
 .about-content {
@@ -972,7 +1002,7 @@ body {
         margin: 0;
         border-radius: 0;
         /* box-shadow: none; */
-        padding: 92px 24px 40px;
+        padding: 192px 24px 40px;
     }
 
     .card_tit.home {
@@ -1223,4 +1253,212 @@ body {
     }
 
 
+}
+
+
+/* ============ HOME 움직이는 배경 ============ */
+
+.section-hero {
+    position: relative;
+    /* min-height: 100vh; */
+    /* 홈 섹션을 화면 한 컷처럼 */
+    /* display: flex; */
+    align-items: center;
+    border-radius: 22px;
+}
+
+/* 카드가 배경 위에 올라오도록 */
+.section-hero .hero-card {
+    position: relative;
+    z-index: 1;
+    border-radius: 22px;
+}
+
+/* 배경 레이어 공통 */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    --mx: 50;
+    /* 마우스 X% */
+    --my: 45;
+    /* 마우스 Y% */
+    border-radius: 22px;
+}
+
+.hero-bg-layer {
+    position: absolute;
+    inset: -10%;
+    will-change: transform, opacity, background-position;
+}
+
+/* 1) 황금빛 그라디언트 웨이브 */
+.bg-gradient {
+    background:
+        radial-gradient(circle at calc(var(--mx) * 1%) calc(var(--my) * 1%),
+            rgba(255, 27, 27, 0.8),
+            rgba(120, 22, 22, 0.5) 35%,
+            rgba(5, 4, 10, 1) 80%);
+    animation: bgPulse 14s ease-in-out infinite alternate;
+}
+
+/* 2) 도트 패턴 */
+.bg-dots {
+    mix-blend-mode: screen;
+    opacity: 0.22;
+    background-image:
+        radial-gradient(circle, rgba(255, 200, 90, 0.85) 8%, transparent 10%);
+    background-size: 18px 18px;
+    animation: dotsDrift 22s linear infinite;
+}
+
+/* 3) 비네트 */
+.bg-vignette {
+    background:
+        radial-gradient(circle at center,
+            transparent 0%,
+            transparent 45%,
+            rgba(0, 0, 0, 0.8) 100%);
+}
+
+@keyframes bgPulse {
+    0% {
+        transform: scale(1.05) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.1) translate3d(-1%, 1%, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate3d(1%, -1%, 0);
+    }
+}
+
+@keyframes dotsDrift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-80px, 40px, 0);
+    }
+}
+
+/* 필요하면 모바일에서 약하게 줄이고 싶을 때 */
+@media (max-width: 768px) {
+    .section-hero {
+        min-height: 80vh;
+    }
+}
+
+
+.section-hero .hero-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(205, 33, 33, 0.9);
+    /* 어두운 반투명 카드 */
+    backdrop-filter: blur(1px);
+}
+
+
+/* ============ 페이지 전체 움직이는 배경 ============ */
+
+.page-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* 맨 뒤 레이어 */
+    pointer-events: none;
+    /* 클릭 막지 않게 */
+    --mx: 50;
+    /* 마우스 X% */
+    --my: 45;
+    /* 마우스 Y% */
+    background: #1B1B1B;
+}
+
+/* ============ 페이지 전체 움직이는 배경 ============ */
+
+.page-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    /* 맨 뒤 레이어 */
+    pointer-events: none;
+    /* 클릭 막지 않게 */
+    --mx: 50;
+    /* 마우스 X% */
+    --my: 45;
+    /* 마우스 Y% */
+    background: #1B1B1B;
+    /* 기본 바탕 (지금 사이트 배경색) */
+}
+
+/* 실제 콘텐츠는 배경 위에 올라오도록 */
+#page {
+    position: relative;
+    z-index: 1;
+}
+
+/* 공통 레이어 */
+.page-bg-layer {
+    position: absolute;
+    inset: -10%;
+    will-change: transform, opacity, background-position;
+}
+
+/* 1) 황금빛 웨이브 그라디언트 */
+.bg-gradient {
+    background:
+        radial-gradient(circle at calc(var(--mx) * 1%) calc(var(--my) * 1%),
+            rgba(218, 47, 47, 0.8),
+            rgba(196, 63, 63, 0.5) 35%,
+            rgba(5, 4, 10, 1) 80%);
+    animation: bgPulse 14s ease-in-out infinite alternate;
+}
+
+/* 2) 도트 패턴 */
+.bg-dots {
+    mix-blend-mode: screen;
+    opacity: 0.22;
+    background-image:
+        radial-gradient(circle, rgba(255, 200, 90, 0.85) 8%, transparent 10%);
+    background-size: 18px 18px;
+    animation: dotsDrift 22s linear infinite;
+}
+
+/* 3) 비네트 */
+.bg-vignette {
+    background:
+        radial-gradient(circle at center,
+            transparent 0%,
+            transparent 45%,
+            rgba(0, 0, 0, 0.85) 100%);
+}
+
+@keyframes bgPulse {
+    0% {
+        transform: scale(1.05) translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform: scale(1.1) translate3d(-1%, 1%, 0);
+    }
+
+    100% {
+        transform: scale(1.08) translate3d(1%, -1%, 0);
+    }
+}
+
+@keyframes dotsDrift {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-80px, 40px, 0);
+    }
 }
