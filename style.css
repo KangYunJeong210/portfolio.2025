@@ -753,8 +753,8 @@ body {
     position: fixed;
     right: 32px;
     bottom: 32px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: none;
     background: var(--accent-yellow);
@@ -781,13 +781,13 @@ body {
 
 .btn-gohome {
     position: fixed;
-    right: 90px;
+    right: 100px;
     bottom: 32px;
     width: 204px;
     height: 44px;
     border-radius: 20px;
     border: none;
-    background: var(--accent-pill);
+    background: var(--accent-yellow);
     box-shadow: var(--shadow-soft);
     cursor: pointer;
     font-size: 14px;
@@ -796,7 +796,7 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.2s ease, transform 0.15s ease;
-    color: #24355e;
+    color: #ffffff;
 }
 
 .btn-gohome.visible {
