@@ -17,7 +17,12 @@
 </head>
 
 <body>
-
+    <!-- 🔥 페이지 전체(모든 섹션)에 깔리는 움직이는 배경 -->
+    <div class="page-bg" aria-hidden="true">
+        <div class="page-bg-layer bg-gradient"></div>
+        <div class="page-bg-layer bg-dots"></div>
+        <div class="page-bg-layer bg-vignette"></div>
+    </div>
     <div id="page">
         <!-- ===================== BLUE NAV (공통) ===================== -->
         <aside class="global-nav">
@@ -81,22 +86,36 @@
 
             <!-- HOME -->
             <section id="home" class="section section-hero">
+                <!-- 움직이는 배경 -->
+                <div class="hero-bg" aria-hidden="true">
+                    <div class="hero-bg-layer"></div>
+                    <div class="hero-bg-layer"></div>
+                    <div class="hero-bg-layer bg-vignette"></div>
+                </div>
+
+                <!-- 기존 홈 카드 (내용은 그대로) -->
                 <div class="hero-card">
-                    <!-- <div class="card_tit home">
-                        <img src="./img/Ellipse1.png" alt="">
-                        <h3 class="section-title hero-sub">Home
-                        </h3>
-                    </div> -->
-                    <h2 class="hero-title">
-                        꾸준히 배우며 앞으로 나아가는<br />
-                        디자이너 강윤정입니다.
-                    </h2>
-                    <p class="hero-text">
-                        <img src="./img/tit_img.png" alt="">
-                    </p>
+                    <div class="hero-copy-block">
+                        <div class="hero-eyebrow">
+                            2025 · KOREA· WEB / UI DESIGN
+                        </div>
+                        <h1 class="hero-title">
+                            보여지는 디자인이 아닌<br>
+                            <span class="accent">경험이 되는
+                                디자인</span>
+                        </h1>
+                        <p class="hero-sub">
+                            컬러, 타이포그래피, 여백의 리듬으로
+                            <strong>“그냥 써도 편한 화면”</strong>을 설계하는 웹디자이너 강윤정입니다.
+                        </p>
+
+
+                        <div class="hero-meta-line">
+                            <img src="./img/tit_img.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </section>
-
             <!-- ABOUT -->
             <section id="about" class="section">
                 <div class="card about-card">
@@ -1069,7 +1088,23 @@
                 mobileHeader.classList.remove('is-open');
             });
         });
+
+
+        // 페이지 전체 배경 마우스 인터랙션
+        const pageBg = document.querySelector('.page-bg');
+        if (pageBg) {
+            window.addEventListener('pointermove', (e) => {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                pageBg.style.setProperty('--mx', x.toFixed(1));
+                pageBg.style.setProperty('--my', y.toFixed(1));
+            });
+        }
+
     </script>
+
+
+
 
 
 </body>
