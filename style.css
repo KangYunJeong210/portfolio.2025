@@ -1002,7 +1002,7 @@ body {
         margin: 0;
         border-radius: 0;
         /* box-shadow: none; */
-        padding: 152px 24px 40px;
+        padding: 80% 24px 40px;
     }
 
     .card_tit.home {
