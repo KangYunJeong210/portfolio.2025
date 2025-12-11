@@ -1360,12 +1360,14 @@ body {
 /* 필요하면 모바일에서 약하게 줄이고 싶을 때 */
 @media (max-width: 768px) {
     .section-hero {
-        min-height: 80vh;
+        min-height: 100vh;
     }
 
     .section-hero .hero-card {
         border-radius: 0;
     }
+
+
 }
 
 
@@ -1377,8 +1379,21 @@ body {
     backdrop-filter: blur(1px);
 }
 
+@media (max-width: 768px) {
+    .section-hero .hero-card {
+        background-color: transparent !important;
+    }
 
-/* ============ 페이지 전체 움직이는 배경 ============ */
+    .section-hero {
+        border-radius: 0 !important;
+    }
+
+    .hero-bg {
+        border-radius: 0 !important;
+    }
+
+    /* ============ 페이지 전체 움직이는 배경 ============ */
+}
 
 .page-bg {
     position: fixed;
